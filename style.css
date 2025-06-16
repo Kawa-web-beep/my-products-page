@@ -1,0 +1,129 @@
+/* تنسيقات عامة للجسم والخطوط */
+body {
+    font-family: Arial, sans-serif; /* نوع الخط */
+    margin: 0; /* إزالة الهوامش الافتراضية للجسم */
+    background-color: #f4f4f4; /* لون خلفية فاتح */
+    color: #333; /* لون النص الأساسي */
+    direction: rtl; /* لجعل النص من اليمين لليسار */
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+/* تنسيقات رأس الصفحة (Header) */
+header {
+    background-color: #007bff; /* لون خلفية أزرق */
+    color: white; /* لون النص أبيض */
+    padding: 20px 0; /* مسافة داخلية علوية وسفلية */
+    text-align: center; /* محاذاة النص في المنتصف */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+header h1 {
+    margin: 0; /* إزالة الهامش الافتراضي للعنوان */
+}
+
+/* تنسيقات حاوية المنتجات (Main Container) */
+.products-container {
+    display: flex; /* لعرض المنتجات في صف واحد */
+    flex-wrap: wrap; /* للسماح للمنتجات بالانتقال لسطر جديد إذا لم يكن هناك مساحة كافية */
+    justify-content: center; /* محاذاة المنتجات في المنتصف أفقياً */
+    padding: 20px; /* مسافة داخلية حول الحاوية */
+    gap: 20px; /* مسافة بين بطاقات المنتجات */
+}
+
+/* تنسيقات بطاقة المنتج الفردية (Product Card) */
+.product-card {
+    background-color: white; /* خلفية بيضاء للبطاقة */
+    border-radius: 8px; /* حواف دائرية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل للبطاقة */
+    padding: 20px; /* مسافة داخلية */
+    width: 280px; /* عرض ثابت للبطاقة */
+    text-align: center; /* محاذاة النص في المنتصف داخل البطاقة */
+    transition: transform 0.2s ease-in-out; /* حركة ناعمة عند التحويم */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* تحريك البطاقة قليلاً للأعلى عند التحويم */
+}
+
+.product-card img {
+    max-width: 100%; /* جعل الصورة تتناسب مع عرض البطاقة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 4px; /* حواف دائرية للصورة */
+    margin-bottom: 15px; /* مسافة أسفل الصورة */
+}
+
+.product-card h2 {
+    font-size: 1.5em; /* حجم خط العنوان */
+    color: #007bff; /* لون أزرق للعنوان */
+    margin-top: 10px; /* مسافة علوية للعنوان */
+    margin-bottom: 10px; /* مسافة سفلية للعنوان */
+}
+
+.product-card .price {
+    font-size: 1.2em; /* حجم خط السعر */
+    color: #28a745; /* لون أخضر للسعر */
+    font-weight: bold; /* خط سميك */
+    margin-bottom: 10px; /* مسافة سفلية */
+}
+
+.product-card .description {
+    font-size: 0.9em; /* حجم خط الوصف */
+    color: #666; /* لون رمادي للوصف */
+    line-height: 1.6; /* تباعد الأسطر */
+    margin-bottom: 20px; /* مسافة سفلية */
+}
+
+.product-card button {
+    background-color: #28a745; /* لون خلفية أخضر للزر */
+    color: white; /* لون النص أبيض */
+    border: none; /* إزالة الحدود */
+    padding: 10px 20px; /* مسافة داخلية للزر */
+    border-radius: 5px; /* حواف دائرية للزر */
+    cursor: pointer; /* تغيير شكل المؤشر إلى يد عند التحويم */
+    font-size: 1em; /* حجم خط الزر */
+    transition: background-color 0.3s ease; /* حركة ناعمة لتغيير اللون */
+}
+
+.product-card button:hover {
+    background-color: #218838; /* لون أخضر أغمق عند التحويم */
+}
+
+/* تنسيقات تذييل الصفحة (Footer) */
+footer {
+    background-color: #333; /* لون خلفية رمادي داكن */
+    color: white; /* لون النص أبيض */
+    text-align: center; /* محاذاة النص في المنتصف */
+    padding: 20px 0; /* مسافة داخلية */
+    margin-top: 30px; /* مسافة علوية لإبعاد التذييل عن المنتجات */
+}
+/* Media Query للأجهزة اللوحية (عرض الشاشة بين 600 بكسل و 992 بكسل) */
+@media (max-width: 992px) {
+    .product-card {
+        width: 250px; /* جعل عرض البطاقة أصغر قليلاً */
+    }
+    .products-container {
+        gap: 15px; /* تقليل المسافة بين البطاقات */
+    }
+}
+
+/* Media Query للهواتف الذكية (عرض الشاشة أقل من 600 بكسل) */
+@media (max-width: 600px) {
+    .product-card {
+        width: 90%; /* جعل البطاقة تأخذ 90% من عرض الشاشة */
+        margin: 0 auto; /* توسيط البطاقة */
+    }
+    .products-container {
+        flex-direction: column; /* جعل البطاقات تترتب عموديا */
+        align-items: center; /* توسيط البطاقات عموديا */
+        padding: 10px;
+    }
+    .product-card h2 {
+        font-size: 1.3em;
+    }
+    .product-card .price {
+        font-size: 1.1em;
+    }
+    .product-card .description {
+        font-size: 0.85em;
+    }
+}
